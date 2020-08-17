@@ -9,6 +9,24 @@ BattlEye proxies NtReadVirtualMemory and NtWriteVirtualMemory in lsass.exe/csrss
 
 # lsass.exe/csrss.exe
 
+```
+01450790	126.99650574	[GoodEye]MmCopyVirtualMemory called from: 0xFFFFF804DEFE2E12	
+01450791	126.99652100	[GoodEye]     - SourceProcess: upc.exe	
+01450792	126.99652100	[GoodEye]     - SourceAddress: 0x00000000078EFBEC	
+01450793	126.99652100	[GoodEye]     - TargetProcess: lsass.exe	
+01450794	126.99652100	[GoodEye]     - TargetAddress: 0x000000B470EFE1F0	
+01450795	126.99652100	[GoodEye]     - BufferSize: 0x000000000000001C	
+01450796	126.99662018	[GoodEye]IofCompleteRequest called from: 0xFFFFF804DEFE2E3D	
+01450797	126.99662018	[GoodEye]     - Request Called From: lsass.exe	
+01450798	126.99662018	[GoodEye]     - IRP_MJ_DEVICE_CONTROL!	
+01450799	126.99663544	[GoodEye]     - IoControlCode:  0x0000000000222000	// ioctl read
+01450800	126.99663544	[GoodEye]     - InputBufferLength: 0x0000000000000030	
+01450801	126.99663544	[GoodEye]     - OutputBufferLength: 0x0000000000000000	
+01450802	126.99663544	[GoodEye]     - UserBuffer: 0x0000000000000000	
+01450803	126.99663544	[GoodEye]     - MdlAddress: 0x0000000000000000	
+01450804	126.99663544	[GoodEye]     - SystemBuffer: 0xFFFFB78765A0ECC0
+```
+
 This section will go into detail about what exactly is going on here. csrss.exe/lsass.exe have handles to all processes and since battleye strips the R/W access of the handle that these processes have
 to the game it can cause system instability. Thus bedaisy writes two pages of shellcode to both processes and inline hooks `NtReadVirtualMemory` and `NtWriteVirtualMemory`.
 
@@ -33,11 +51,4 @@ this to read/write any other process you can open a simple handle too. `Rust`, `
 this works is two fold, firstly BattlEye assumes that the handle already has this access, secondly BattlEye only uses the handle to get the `EPROCESS` so they can call `MmCopyVirtualMemory`. You can see
 this in my runtime logs of `BEDaisy`.
 
-```
-01301313	118.65435028	[GoodEye]MmCopyVirtualMemory called from: 0xFFFFF804DEFE2D64	
-01301314	118.65435028	[GoodEye]     - SourceProcess: csrss.exe	
-01301315	118.65435028	[GoodEye]     - SourceAddress: 0x0000005A7B5DEF38	
-01301316	118.65435028	[GoodEye]     - TargetProcess: DiscordHookHel	
-01301317	118.65435028	[GoodEye]     - TargetAddress: 0x00000074452CE308	
-01301318	118.65435028	[GoodEye]     - BufferSize: 0x0000000000000008	
-```
+
