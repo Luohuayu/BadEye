@@ -107,10 +107,17 @@ namespace bedaisy
 	}
 }
 
-void runner()
+void read_demo()
 {
 	OutputDebugStringA("[lsass] main thread created!");
-	if(bedaisy::read<std::uint16_t>((HANDLE)-1, 0x7ff7f2c90000) == 0x5A4D)
+
+	// pid 4 is system process....
+	const auto system_process = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, 4); 
+
+	 // global mapped... gunna be the same addr in system proc....
+	const auto ntdll = reinterpret_cast<std::uintptr_t>(GetModuleHandleA("ntdll.dll"));
+
+	if(bedaisy::read<std::uint16_t>(system_process, ntdll) == 0x5A4D)
 		OutputDebugStringA("[lsass] read MZ!");
 	else
 		OutputDebugStringA("[lsass] didnt read MZ!");
@@ -122,7 +129,7 @@ extern "C" NTSTATUS nt_close(void* handle)
 	if (!init.exchange(true))
 	{
 		OutputDebugStringA("[lsass] creating thread!");
-		CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)&runner, NULL, NULL, NULL);
+		CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)&read_demo, NULL, NULL, NULL);
 	}
 	return NULL;
 }
