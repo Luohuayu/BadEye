@@ -16,4 +16,4 @@ As you can see you can open any handle with any access and then pass it along to
 # lsass.exe/csrss.exe
 
 This section will go into detail about what exactly is going on here. csrss.exe/lsass.exe have handles to all processes and since battleye strips the R/W access of the handle that these processes have
-to the game... thus they proxy the calls to their driver. 
+to the game it can cause system instability.
