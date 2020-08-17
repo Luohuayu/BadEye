@@ -19,4 +19,8 @@ This inline hook jumps to shellcode that packages all of the parameter values pa
 <img src="https://imgur.com/DpFyC9p.png"/>
 
 Now that you have a basic understanding of how this system works (and sorta why it is), lets look at what we can do!
-To begin we need to extract the driver handle at runtime, this can be done simply by extracting the address of the shellcode out of the inline hook of `NtReadVirtualMemory`.
+To begin we need to extract the driver handle at runtime, this can be done simply by extracting the address of the shellcode out of the inline hook of `NtReadVirtualMemory`. Nnow that we have 
+the handle to the driver we can start sending IOCTL's to BattlEye. The IOCTL data is not encrypted nor complicated... this is what it looks like:
+
+<img src="https://imgur.com/fa627q3.png"/>
+
