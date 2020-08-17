@@ -7,6 +7,6 @@ The reason this proxy of a syscall is a vulnerability is simply because their is
 open a handle with `PROCESS_QUERY_LIMITED_INFORMATION` and use that handle to read/write any usermode memory that is also read/writeable. The handle access is not important to bedaisy
 rather they use the handle to get the EPROCESS of the process that the handle is opened on.
 
-<img src="https://imgur.com/fdthCQb.png"/>
+<img src="https://imgur.com/5MjFoHg.png"/>
 
 As you can see you can open any handle with any access and then pass it along to bedaisy and it will read/write for you...
