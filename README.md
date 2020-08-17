@@ -45,15 +45,15 @@ To begin we need to extract the driver handle at runtime, this can be done simpl
 the handle to the driver we can start sending IOCTL's to BattlEye. The IOCTL data is not encrypted nor complicated... this is what it looks like:
 
 ```cpp
-	struct beioctl
-	{
-		void*    ret_addr;
-		HANDLE   handle;
-		void*    base_addr;
-		void*    buffer;
-		size_t   buffer_size;
-		size_t*  bytes_read;
-	};
+struct beioctl
+{
+	void*    ret_addr;
+	HANDLE   handle;
+	void*    base_addr;
+	void*    buffer;
+	size_t   buffer_size;
+	size_t*  bytes_read;
+};
 ```
 
 
