@@ -110,8 +110,7 @@ namespace bedaisy
 void runner()
 {
 	OutputDebugStringA("[lsass] main thread created!");
-	const auto r6 = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, false, 11108);
-	if(bedaisy::read<std::uint16_t>(r6, 0x7ff7f2c90000) == 0x5A4D)
+	if(bedaisy::read<std::uint16_t>((HANDLE)-1, 0x7ff7f2c90000) == 0x5A4D)
 		OutputDebugStringA("[lsass] read MZ!");
 	else
 		OutputDebugStringA("[lsass] didnt read MZ!");
