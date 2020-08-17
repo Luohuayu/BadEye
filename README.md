@@ -9,6 +9,15 @@ this to read/write any other process you can open a simple handle too. `Rust`, `
 this works is two fold, firstly BattlEye assumes that the handle already has this access, secondly BattlEye only uses the handle to get the `EPROCESS` so they can call `MmCopyVirtualMemory`. You can see
 this in my runtime logs of `BEDaisy`.
 
+```
+01330160	120.06138611	[GoodEye]MmCopyVirtualMemory called from: 0xFFFFF804DEFE2D64	
+01330161	120.06138611	[GoodEye]     - SourceProcess: csrss.exe	
+01330162	120.06140137	[GoodEye]     - SourceAddress: 0x0000005A7B55E730	
+01330163	120.06140137	[GoodEye]     - TargetProcess: Discord.exe	
+01330164	120.06140137	[GoodEye]     - TargetAddress: 0x0000000009B311F8	
+01330165	120.06140137	[GoodEye]     - BufferSize: 0x0000000000000004
+```
+
 # lsass.exe/csrss.exe
 
 ```
