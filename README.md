@@ -1,5 +1,3 @@
-# i am writing this atm so come back later
-
 # BadEye
 
 BattlEye proxies NtReadVirtualMemory and NtWriteVirtualMemory in lsass.exe/csrss.exe but doesnt bother to check the handle privilage....
@@ -43,10 +41,20 @@ This inline hook jumps to shellcode that packages all of the parameter values pa
 <img src="https://imgur.com/DpFyC9p.png"/>
 
 Now that you have a basic understanding of how this system works (and sorta why it is), lets look at what we can do!
-To begin we need to extract the driver handle at runtime, this can be done simply by extracting the address of the shellcode out of the inline hook of `NtReadVirtualMemory`. Nnow that we have 
+To begin we need to extract the driver handle at runtime, this can be done simply by extracting the address of the shellcode out of the inline hook of `NtReadVirtualMemory`. Now that we have 
 the handle to the driver we can start sending IOCTL's to BattlEye. The IOCTL data is not encrypted nor complicated... this is what it looks like:
 
-<img src="https://imgur.com/fa627q3.png"/>
+```cpp
+	struct beioctl
+	{
+		void*    ret_addr;
+		HANDLE   handle;
+		void*    base_addr;
+		void*    buffer;
+		size_t   buffer_size;
+		size_t*  bytes_read;
+	};
+```
 
 
 
