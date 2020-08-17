@@ -1,7 +1,3 @@
-### disclaimer
-
-This website [githacks.org], and its respective articles, are completely and solely for educational purposes, and its author, [_xeroxz], is neither personally responsible nor liable for neither malpractice nor unlawful behaviour based on this website’s contents. The owner of this website operates in a country where such laws as industrial-secrets-laws prohibit any legal action against any person reverse-engineering any publicly-available product, as long as it is not for monetary gain. The author [xerox] of this website has not signed any written contracts that are juridically binding, as neither terms-of-services nor EULA’s are proper contracts in their respective country, essentially protecting this website completely for legal action. No content on this website infringes any copyrighted material or innovations, as reverse-engineered code goes under fair use as long as it is not being used for monetary gain.
-
 # BadEye
 
 BattlEye proxies NtReadVirtualMemory and NtWriteVirtualMemory in lsass.exe/csrss.exe but doesnt bother to check the handle privilage....
@@ -73,4 +69,7 @@ struct beioctl
 In order to use this ioctl/functionality of bedaisy you need to put a valid return address into this structure. You can do that by sig scanning `lsasrv.dll` with this signature:
 `0f 1f 44 00 ? 8b f0 48 8b 0d ? ? ? ? 49 3b cd` the address of this instruction is what you want to be your return address.
 
+### disclaimer
+
+This website [githacks.org], and its respective articles, are completely and solely for educational purposes, and its author, [_xeroxz], is neither personally responsible nor liable for neither malpractice nor unlawful behaviour based on this website’s contents. The owner of this website operates in a country where such laws as industrial-secrets-laws prohibit any legal action against any person reverse-engineering any publicly-available product, as long as it is not for monetary gain. The author [xerox] of this website has not signed any written contracts that are juridically binding, as neither terms-of-services nor EULA’s are proper contracts in their respective country, essentially protecting this website completely for legal action. No content on this website infringes any copyrighted material or innovations, as reverse-engineered code goes under fair use as long as it is not being used for monetary gain.
 
