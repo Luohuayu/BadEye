@@ -27,6 +27,16 @@ this in my runtime logs of `BEDaisy`.
 01450804	126.99663544	[GoodEye]     - SystemBuffer: 0xFFFFB78765A0ECC0
 ```
 
+# limitations
+
+- you cannot read/write kernel addresses 
+- you cannot write to readonly memory with this
+- the `PULONG NumberOfBytesRead` pointer cannot be a kernel address (sorry tried lol)
+- you cannot read/write to the process being protected by battleye
+- bedaisy has to be loaded for this to work
+- you must be inside of lsass.exe
+- lsass.exe cannot be a protected process. (some systems protect lsass.exe)
+
 # lsass.exe/csrss.exe
 
 This section will go into detail about what exactly is going on here. csrss.exe/lsass.exe have handles to all processes and since battleye strips the R/W access of the handle that these processes have
