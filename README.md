@@ -56,5 +56,7 @@ struct beioctl
 };
 ```
 
+In order to use this ioctl/functionality of bedaisy you need to put a valid return address into this structure. You can do that by sig scanning `lsasrv.dll` with this signature:
+`0f 1f 44 00 ? 8b f0 48 8b 0d ? ? ? ? 49 3b cd` the address of this instruction is what you want to be your return address.
 
 
