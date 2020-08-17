@@ -10,17 +10,6 @@ this works is two fold, firstly BattlEye assumes that the handle already has thi
 this in my runtime logs of `BEDaisy`.
 
 ```
-01330160	120.06138611	[GoodEye]MmCopyVirtualMemory called from: 0xFFFFF804DEFE2D64	
-01330161	120.06138611	[GoodEye]     - SourceProcess: csrss.exe	
-01330162	120.06140137	[GoodEye]     - SourceAddress: 0x0000005A7B55E730	
-01330163	120.06140137	[GoodEye]     - TargetProcess: Discord.exe	
-01330164	120.06140137	[GoodEye]     - TargetAddress: 0x0000000009B311F8	
-01330165	120.06140137	[GoodEye]     - BufferSize: 0x0000000000000004
-```
-
-# lsass.exe/csrss.exe
-
-```
 01450790	126.99650574	[GoodEye]MmCopyVirtualMemory called from: 0xFFFFF804DEFE2E12	
 01450791	126.99652100	[GoodEye]     - SourceProcess: upc.exe	
 01450792	126.99652100	[GoodEye]     - SourceAddress: 0x00000000078EFBEC	
@@ -37,6 +26,8 @@ this in my runtime logs of `BEDaisy`.
 01450803	126.99663544	[GoodEye]     - MdlAddress: 0x0000000000000000	
 01450804	126.99663544	[GoodEye]     - SystemBuffer: 0xFFFFB78765A0ECC0
 ```
+
+# lsass.exe/csrss.exe
 
 This section will go into detail about what exactly is going on here. csrss.exe/lsass.exe have handles to all processes and since battleye strips the R/W access of the handle that these processes have
 to the game it can cause system instability. Thus bedaisy writes two pages of shellcode to both processes and inline hooks `NtReadVirtualMemory` and `NtWriteVirtualMemory`.
