@@ -1,13 +1,8 @@
 # badeye
 
-from ini file to kernel execution, BattlEye full privilege escalation.
+Its well known that battleye proxies calls to `NtReadVirtualMemory/NtWriteVirtualMemory` to their driver via DeviceIoControl in both `lsass.exe` and `csrss.exe`. Although csrss.exe
+is not something you can inject from usermode, lsass.exe is (although it can be protected, depends on your system/hvci). 
 
-# ini 2 lsass.exe
-
-`BELauncher.ini` can specify which process it is going to protect and arguments to be passed to this process. For our use case we will want to protect `powershell.exe`. This will
-allow us to JIT compile C# and call native windows functions (OpenProcess, WriteProcessMemory, etc...). All of the C# code/powershell code can be specified in `BEArg=""`.
-
-# lsass.exe 2 ring 0
-
-The reason why lsass.exe is a key program/context to be executing in, is because BattlEye inline hooks `NtReadVirtualMemory` and `NtWriteVirtualMemory`, this is well documented and has
-been known for a while now (posted on UC even). BattlEye proxies the calls to these functions to their driver via `DeviceIoControl`.
+The reason this proxy of a syscall is a vulnerability is simply because their is no validation of R/W access on the specified handle passed to `BEDaisy`. In other words: you can
+open a handle with `PROCESS_QUERY_LIMITED_INFORMATION` and use that handle to read/write any usermode memory that is also read/writeable. The handle access is not important to bedaisy
+rather they use the handle to get the EPROCESS of the process that the handle is opened on.
