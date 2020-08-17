@@ -1,6 +1,6 @@
 # i am writing this atm so come back later
 
-# badeye
+# BadEye
 
 BattlEye proxies NtReadVirtualMemory and NtWriteVirtualMemory in lsass.exe/csrss.exe but doesnt bother to check the handle privilage....
 
