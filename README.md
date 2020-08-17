@@ -1,3 +1,5 @@
+# i am writing this atm so come back later
+
 # badeye
 
 Its well known that battleye proxies calls to `NtReadVirtualMemory/NtWriteVirtualMemory` to their driver via DeviceIoControl in both `lsass.exe` and `csrss.exe`. Although csrss.exe
@@ -10,3 +12,7 @@ rather they use the handle to get the EPROCESS of the process that the handle is
 <img src="https://imgur.com/5MjFoHg.png"/>
 
 As you can see you can open any handle with any access and then pass it along to bedaisy and it will read/write for you...
+
+# lsass.exe/csrss.exe
+
+This section will go into detail about what exactly is going on here. csrss.exe/lsass.exe have handles to all processes 
