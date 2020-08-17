@@ -37,7 +37,7 @@ namespace bedaisy
 					GetModuleHandleA("lsasrv.dll"));
 
 			// 0f 1f 44 00 ? 8b f0 48 8b 0d ? ? ? ? 49 3b cd (proper return)
-			return { ioctl_handle, reinterpret_cast<void*>(lsasrv + 0x36E3B) };
+			return { ioctl_handle, reinterpret_cast<void*>(lsasrv + 0x36E3B) }; // windows 10 2004 RVA you will need to update for your winver! :)
 		}
 		return { {}, {} };
 	}
