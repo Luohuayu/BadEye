@@ -30,3 +30,12 @@ Now that we can ask BEDaisy to read/write for us, what are the limitations? Well
 this to read/write any other process you can open a simple handle too. `Rust`, `Valorant`, you name it, just open a `PROCESS_QUERY_LIMITED_INFORMATION` handle and pass it to `BEDaisy`. The reason
 this works is two fold, firstly BattlEye assumes that the handle already has this access, secondly BattlEye only uses the handle to get the `EPROCESS` so they can call `MmCopyVirtualMemory`. You can see
 this in my runtime logs of `BEDaisy`.
+
+```
+01301313	118.65435028	[GoodEye]MmCopyVirtualMemory called from: 0xFFFFF804DEFE2D64	
+01301314	118.65435028	[GoodEye]     - SourceProcess: csrss.exe	
+01301315	118.65435028	[GoodEye]     - SourceAddress: 0x0000005A7B5DEF38	
+01301316	118.65435028	[GoodEye]     - TargetProcess: DiscordHookHel	
+01301317	118.65435028	[GoodEye]     - TargetAddress: 0x00000074452CE308	
+01301318	118.65435028	[GoodEye]     - BufferSize: 0x0000000000000008	
+```
