@@ -17,3 +17,6 @@ If you run a battleye protected game, open cheat engine, attach to `lsass.exe`, 
 This inline hook jumps to shellcode that packages all of the parameter values passed to `NtReadVirtualMemory` into the stack and then jumps to `DeviceIoControl`...
 
 <img src="https://imgur.com/DpFyC9p.png"/>
+
+Now that you have a basic understanding of how this system works (and sorta why it is), lets look at what we can do!
+To begin we need to extract the driver handle at runtime, this can be done simply by extracting the address of the shellcode out of the inline hook of `NtReadVirtualMemory`.
