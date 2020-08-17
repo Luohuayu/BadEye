@@ -24,3 +24,7 @@ the handle to the driver we can start sending IOCTL's to BattlEye. The IOCTL dat
 
 <img src="https://imgur.com/fa627q3.png"/>
 
+# limitations
+
+Now that we can ask BEDaisy to read/write for us, what are the limitations? Well first off you cannot use this to read/write the process that battleye is protecting but you can use
+this to read/write any other process you can open a simple handle too. `Rust`, `Valorant`, you name it, just open a `PROCESS_QUERY_LIMITED_INFORMATION` handle and pass it to `BEDaisy`.
