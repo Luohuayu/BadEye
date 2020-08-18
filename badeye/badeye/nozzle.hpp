@@ -50,6 +50,46 @@ return false;\
 //
 namespace util
 {
+	inline void write(HANDLE target_handle, void* addr, void* buffer, std::size_t size)
+	{
+		SIZE_T bytes_written;
+		::WriteProcessMemory(
+			target_handle,
+			addr,
+			buffer,
+			size,
+			&bytes_written
+		);
+	}
+
+	inline void read(HANDLE target_handle, void* addr, void* buffer, std::size_t size)
+	{
+		SIZE_T bytes_read;
+		::ReadProcessMemory(
+			target_handle,
+			addr,
+			buffer,
+			size,
+			&bytes_read
+		);
+	}
+
+	template <class T>
+	inline T read(HANDLE target_handle, void* addr)
+	{
+		if (!addr) return {};
+		T buffer;
+		read(target_handle, addr, static_cast<void*>(&buffer), sizeof(T));
+		return buffer;
+	}
+
+	template <class T>
+	inline void write(HANDLE target_handle, void* addr, const T& data)
+	{
+		if (!addr) return;
+		write(target_handle, addr, static_cast<void*>(&data), sizeof(T));
+	}
+
 	using uq_handle = std::unique_ptr<void, decltype(&CloseHandle)>;
 	inline void open_binary_file(const std::string& file, std::vector<uint8_t>& data)
 	{
@@ -365,25 +405,20 @@ namespace nozzle
 		HANDLE target_handle;
 		void* alloc_base;
 
-		void write(void* addr, void* buffer, std::size_t size);
-		void read(void* addr, void* buffer, std::size_t size);
-
 		template <class T>
 		T read(void* addr)
 		{
-			if (!addr)
-				return {};
+			if (!addr) return {};
 			T buffer;
-			read(addr, &buffer, sizeof(T));
+			read(target_handle, addr, static_cast<void*>(&buffer), sizeof(T));
 			return buffer;
 		}
 
 		template <class T>
 		void write(void* addr, const T& data)
 		{
-			if (!addr)
-				return;
-			write(addr, (void*)&data, sizeof(T));
+			if (!addr) return;
+			write(target_handle, addr, static_cast<void*>(&data), sizeof(T));
 		}
 	};
 
@@ -400,9 +435,8 @@ namespace nozzle
 		std::vector<std::uint8_t> image_buffer;
 		util::open_binary_file(path, image_buffer);
 		this->image_buffer = image_buffer;
-		std::printf("[+] enabled debug priv => %d\n", util::enable_privilege(L"SeDebugPrivilege"));
+		util::enable_privilege(L"SeDebugPrivilege");
 		this->target_handle = ::OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
-		std::printf("[+] target handle => %p\n", target_handle);
 	}
 
 	injector::injector(std::vector<std::uint8_t> image_buffer, unsigned pid)
@@ -446,7 +480,7 @@ namespace nozzle
 		image.fix_imports(_get_module, _get_function);
 		image.map();
 		image.relocate(reinterpret_cast<std::uintptr_t>(alloc_base));
-		write(alloc_base, image.data(), image.size());
+		util::write(this->target_handle, alloc_base, image.data(), image.size());
 		return alloc_base;
 	}
 
@@ -457,7 +491,7 @@ namespace nozzle
 		std::uint8_t jmp_rip[14] = { 0xff, 0x25, 0x0, 0x0, 0x0, 0x0 };
 		*reinterpret_cast<std::uintptr_t*>(jmp_rip + 6) = reinterpret_cast<std::uintptr_t>(alloc_base) + image.entry_point();
 		static const auto rtl_alloc_heap = GetProcAddress(GetModuleHandle(L"ntdll.dll"), "NtClose");
-		write(rtl_alloc_heap, jmp_rip, sizeof(jmp_rip));
+		util::write(this->target_handle, rtl_alloc_heap, jmp_rip, sizeof(jmp_rip));
 	}
 
 	void* injector::get_allocated_base() const
@@ -483,29 +517,5 @@ namespace nozzle
 	unsigned injector::get_target() const
 	{
 		return target_pid;
-	}
-
-	void injector::write(void* addr, void* buffer, std::size_t size)
-	{
-		SIZE_T bytes_written;
-		::WriteProcessMemory(
-			target_handle,
-			addr,
-			buffer,
-			size,
-			&bytes_written
-		);
-	}
-
-	void injector::read(void* addr, void* buffer, std::size_t size)
-	{
-		SIZE_T bytes_read;
-		::ReadProcessMemory(
-			target_handle,
-			addr,
-			buffer,
-			size,
-			&bytes_read
-		);
 	}
 }
