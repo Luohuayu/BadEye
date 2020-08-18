@@ -1,3 +1,6 @@
+# Credit
+ - btbd, buck => helping me connect the dots/fixing some problems.
+
 # BadEye
 
 BattlEye proxies NtReadVirtualMemory and NtWriteVirtualMemory in lsass.exe/csrss.exe but doesnt bother to check the handle privilage....
