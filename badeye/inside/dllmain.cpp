@@ -1,28 +1,18 @@
-﻿#include "bedaisy.hpp"
-#include "utils.hpp"
+﻿#include "rust.hpp"
 
-void read_demo()
+void example()
 {
 	OutputDebugStringA("[lsass] main thread created!");
-	const auto rust_handle =
+	const auto proc_handle =
 		OpenProcess(
 			PROCESS_QUERY_INFORMATION, FALSE,
 			utils::get_pid(L"RustClient.exe")
 		);
 
-	if (rust_handle)
+	if (proc_handle)
 	{
-		const auto game_base = utils::get_proc_base(rust_handle);
-		if (bedaisy::read<std::uint16_t>(rust_handle, game_base) == 0x5A4D)
-			OutputDebugStringA("[lsass] read rust MZ!");
-		else
-			OutputDebugStringA("[lsass] didnt read rust MZ!");
-
-		const auto asm_base = utils::get_module_base(rust_handle, L"GameAssembly.dll");
-		if (bedaisy::read<std::uint16_t>(rust_handle, asm_base) == 0x5A4D)
-			OutputDebugStringA("[lsass] read game assembly MZ!");
-		else
-			OutputDebugStringA("[lsass] didnt game assembly MZ!");
+		rust::set_fov(proc_handle, 120.f);
+		OutputDebugStringA("[lsass] set fov!");
 	}
 }
 
@@ -32,7 +22,7 @@ extern "C" NTSTATUS nt_close(void* handle)
 	if (!init.exchange(true))
 	{
 		OutputDebugStringA("[lsass] creating thread!");
-		CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)&read_demo, NULL, NULL, NULL);
+		CreateThread(NULL, NULL, (LPTHREAD_START_ROUTINE)&example, NULL, NULL, NULL);
 	}
 	return NULL;
 }

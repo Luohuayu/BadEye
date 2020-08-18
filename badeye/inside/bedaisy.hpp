@@ -42,7 +42,7 @@ namespace bedaisy
 					GetModuleHandleA("lsasrv.dll"));
 
 			// 0f 1f 44 00 ? 8b f0 48 8b 0d ? ? ? ? 49 3b cd (proper return)
-			return { ioctl_handle, reinterpret_cast<void*>(lsasrv + 0x36E3B) }; // windows 10 2004 RVA you will need to update for your winver! :)
+			return { ioctl_handle, reinterpret_cast<void*>(lsasrv + 0x3B2AD) }; // windows 10 2004 RVA you will need to update for your winver! :)
 		}
 		return { {}, {} };
 	}
@@ -114,7 +114,7 @@ namespace bedaisy
 			return {};
 
 		T buffer{};
-		read(proc_handle, addr, static_cast<void*>(&buffer), sizeof(T));
+		read(proc_handle, addr, (void*)&buffer, sizeof(T));
 		return buffer;
 	}
 
@@ -124,6 +124,6 @@ namespace bedaisy
 		if (!proc_handle || !addr)
 			return;
 
-		write(proc_handle, addr, static_cast<void*>(&data), sizeof(T));
+		write(proc_handle, addr, (void*)&data, sizeof(T));
 	}
 }
