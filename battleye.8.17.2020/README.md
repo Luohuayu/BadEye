@@ -1,0 +1,3 @@
+# Info
+
+just double click `BELauncher.exe`, it should open and protect the cmd sitting in the same folder...
