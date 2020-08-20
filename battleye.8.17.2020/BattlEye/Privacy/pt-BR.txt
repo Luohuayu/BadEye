@@ -1,0 +1,15 @@
+Para servir ao propósito de prevenir e detectar o uso de softwares de trapaça a fim de garantir um ambiente de jogo justo, o BattlEye deve processar as seguintes informações suas:
+
+- Endereço IP
+- Identificadores do jogo (ex.: nome dentro do jogo, ID da conta etc.)
+- Informações e identificadores do dispositivo físico (ex.: números de série)
+- Informações sobre o sistema operacional em execução
+- Informações sobre arquivos e memória relacionados ao jogo e ao sistema operacional
+- Informações sobre os processos em execução, controladores e outros códigos executáveis
+- Nomes de arquivos inclusos em outras informações listadas aqui que também podem conter o seu nome de usuário no sistema operacional
+
+O BattlEye segue uma política de minimização de dados que assegura que estes sejam armazenados apenas quando necessário — ex.: quando o BattlEye encontra informações que têm potencial para indicar uso de software de trapaça. Desta forma, o BattlEye geralmente não armazena informação alguma da maioria dos usuários.
+
+O BattlEye deve armazenar informações referentes à duração total da provisão de seus serviços para o jogo.
+
+Você pode contatar a Ubisoft a qualquer momento para exercer os seus direitos em relação a esse processamento de dados. Para mais informações, confira a Política de Privacidade do BattlEye em https://www.battleye.com/privacy-policy/ e a Política de Privacidade da Ubisoft em https://legal.ubi.com/privacypolicy.

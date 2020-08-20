@@ -1,0 +1,14 @@
+W celu zapobiegania i wykrywania oprogramowania, które może służyć do oszukiwania, oraz pragnąc zapewnić maksymalnie uczciwe środowisko gry, BattlEye może przetwarzać następujące informacje pochodzące od ciebie:
+- Adres IP 
+- Identyfikatory w grze (np. nazwę użytkownika w grze, ID konta, itp.)
+- Informacje i identyfikatory sprzętu (np. numery seryjne)
+- Informacje dot. funkcjonującego systemu operacyjnego
+- Informacje związane z obszarami pamięci i plikami pochodzącymi z gry oraz z systemu operacyjnego 
+- Informacje dotyczące działających aplikacji, sterowników i innych elementów kodu wykonywalnego 
+- Nazwy plików zawarte w innych źródłach wymienionych tutaj, które mogą zawierać także twoją nazwę użytkownika w systemie operacyjnym. 
+
+BattlEye działa zgodnie z zasadą pozyskiwania tylko minimalnej, niezbędnej ilości danych, które będą przechowywane tylko wówczas, gdy będzie to niezbędne, np. jeśli BattlEye odnajdzie informacje mogące wskazywać na wykorzystanie oprogramowania służącego do oszukiwania. W związku z tym BattlEye ogólnie nie będzie przechowywał informacji o większości użytkowników.
+
+BattlEye może przechowywać informacje w trakcie całego procesu świadczenia usług dla danej gry.
+
+Użytkownik może w dowolnym momencie skontaktować się z Ubisoft, aby skorzystać ze swoich praw związanych z przetwarzaniem danych. W celu uzyskania dodatkowych informacji prosimy o zapoznanie się z Polityką prywatności BattlEye, https://www.battleye.com/privacy-policy/ i Ubisoft, https://legal.ubi.com/privacypolicy.

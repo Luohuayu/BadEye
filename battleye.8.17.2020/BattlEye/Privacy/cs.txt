@@ -1,0 +1,15 @@
+Aby mohl BattlEye sloužit svému účelu prevence a odhalování používání softwaru sloužícímu k podvádění a zajistit tak spravedlivé herní prostředí, BattlEye od vás může zpracovávat následující informace:
+
+- IP adresa
+- identifikátory hry (např. název hry, ID účtu apod.)
+- informace a identifikátory hardwarových zařízení (např. sériová čísla)
+- informace o spuštěném operačním systému
+- informace o souborech a paměti souvisejících s hrou a operačním systémem
+- informace o spuštěných procesech, ovladačích a dalším spustitelném kódu
+- názvy souborů obsažené v dalších zde uvedených informacích, které mohou obsahovat také uživatelské jméno v operačním systému
+
+BattlEye se řídí zásadou minimalizace dat, která zajišťuje, že data jsou ukládána pouze v případě potřeby, tj. když BattlEye vyhledá informace, které mohou potenciálně znamenat použití softwaru sloužícímu k podvádění. V důsledku toho společnost BattlEye obecně neukládá žádné informace o většině uživatelů.
+
+BattlEye může ukládat informace po celou dobu trvání poskytování služeb pro hru.
+
+Abyste mohli uplatnit vaše práva v souvislosti s tímto zpracováním dat, můžete kdykoli společnost Ubisoft kontaktovat. Další informace naleznete v zásadách ochrany osobních údajů společnosti BattlEye, https://www.battleye.com/privacy-policy/ a ​​zásadách ochrany soukromí společnosti Ubisoft, https://legal.ubi.com/privacypolicy.

@@ -1,0 +1,15 @@
+BattlEye heeft als doel het voorkomen en detecteren van het gebruik van cheatsoftware om een eerlijke game-omgeving te bewerkstelligen en kan daartoe de volgende persoonlijke gegevens verwerken:
+
+- IP-adres
+- Game-identificatie (zoals je in-game naam en accountinfo)
+- Informatie en identificatie van hardware (zoals serienummers)
+- Informatie over het actieve besturingssysteem
+- Informatie over game- en besturingssysteemgerelateerde bestanden en geheugens
+- Informatie over actieve processen, stuurprogramma's en andere uitvoerbare code
+- Bestandsnamen die in andere hier opgenoemde informatie voorkomen, waaronder mogelijk de gebruikersnaam van je systeem
+
+BattlEye houdt zich aan een beleid om zo min mogelijk gegevens te verzamelen, zodat gegevens alleen worden opgeslagen als dit nodig is, bijvoorbeeld wanneer BattlEye informatie vindt die er mogelijk op kan wijzen dat er cheatsoftware is gebruikt. Dat leidt er toe dat BattlEye in het algemeen geen informatie opslaat over de meeste gebruikers.
+
+BattlEye kan de informatie bewaren zolang het de game ondersteunt.
+
+Je kunt altijd contact opnemen met Ubisoft om gebruik te maken van je rechten met betrekking tot de verwerking van deze gegevens. Raadpleeg het privacybeleid van BattlEye (https://www.battleye.com/privacy-policy/) en het privacybeleid van Ubisoft (https://legal.ubi.com/privacypolicy) voor meer informatie.

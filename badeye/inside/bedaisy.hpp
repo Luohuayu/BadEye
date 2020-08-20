@@ -60,7 +60,7 @@ namespace bedaisy
 			addr,
 			buffer,
 			size,
-			nullptr
+			(size_t*)0xFFFFFFF3423424
 		};
 
 		DWORD bytes_read;

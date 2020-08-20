@@ -1,0 +1,3 @@
+@echo off
+echo Installing BattlEye...
+..\RainbowSix_BE.exe 1 0

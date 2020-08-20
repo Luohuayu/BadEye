@@ -1,8 +1,8 @@
 #pragma once
 #include "utils.hpp"
-#define GFX_MANAGER 0x28C6F30
-#define CAMERA_MANAGER 0xB8
-#define CAMERA_FOV       0x18
+#define GFX_MANAGER     0x28C6F30
+#define CAMERA_MANAGER  0xB8
+#define CAMERA_FOV      0x18
 
 namespace rust
 {

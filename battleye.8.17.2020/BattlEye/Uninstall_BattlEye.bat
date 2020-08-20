@@ -1,0 +1,3 @@
+@echo off
+echo Uninstalling BattlEye...
+..\RainbowSix_BE.exe 4

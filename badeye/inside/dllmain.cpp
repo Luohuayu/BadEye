@@ -16,6 +16,7 @@ void example()
 	}
 }
 
+
 std::atomic<bool> init = false;
 extern "C" NTSTATUS nt_close(void* handle)
 {

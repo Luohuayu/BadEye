@@ -1,0 +1,15 @@
+Mit dem Ziel, die Nutzung von Cheat-Software zu verhindern und zu erkennen, um eine faire Spielumgebung zu gewährleisten, darf BattlEye folgende deiner Daten verarbeiten:
+
+– IP-Adresse
+– Spielidentifikationsdaten (z. B. Name im Spiel, Konto-ID usw.)
+– Informationen und Identifikationsdaten zu Hardwaregeräten (z. B. Seriennummern)
+– Informationen zum genutzten Betriebssystem
+– Informationen zu Dateien und Speichern, die mit dem Spiel und dem Betriebssystem in Zusammenhang stehen
+– Informationen zu laufenden Prozessen, Treibern und anderem ausführbaren Code
+– Dateinamen aus den hier gelisteten Informationen, darunter unter Umständen auch dein Betriebssystem-Benutzername
+
+BattlEye folgt dem Grundsatz der Datenminimierung, nach dem Daten nur gespeichert werden, wenn es notwendig ist – d. h., wenn BattlEye auf Informationen stößt, die potenziell auf die Nutzung von Cheat-Software hindeuten. Das bedeutet, dass BattlEye im Allgemeinen keinerlei Informationen über den Großteil der Nutzer speichert.
+
+BattlEye darf die Informationen für die gesamte Dauer der Bereitstellung seiner Dienste für das Spiel speichern.
+
+Du kannst Ubisoft jederzeit kontaktieren, um deine Rechte im Zusammenhang mit dieser Datenverarbeitung auszuüben. Weitere Informationen findest du in den Datenschutzrichtlinien von BattlEye (https://www.battleye.com/privacy-policy/) und Ubisoft (https://legal.ubi.com/privacypolicy).

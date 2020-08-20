@@ -18,5 +18,4 @@ int main(const int argc, const char** argv)
 
 	std::printf("[+] module base => %p\n", module_base);
 	std::getchar();
-
 }

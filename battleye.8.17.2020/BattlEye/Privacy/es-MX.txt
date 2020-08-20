@@ -1,0 +1,15 @@
+Para servir a su propósito de impedir el uso de software de cheat (para hacer trampas), con el objetivo de asegurar un entorno de juego justo, BattlEye puede procesar la siguiente información sobre ti:
+
+- Dirección IP
+- Identificadores de juego (nombre dentro del juego, ID de la cuenta, etc.)
+- Información del hardware, dispositivos e identificadores (por ejemplo, números de serie, etc.)
+- Información sobre el sistema operativo en ejecución
+- Información sobre archivos y memoria relacionados con el sistema operativo y con el juego
+- Información sobre procesos en ejecución, drivers y otros códigos ejecutables
+- Nombres de archivos incluidos en otra información listada, que también podría contener tu nombre de usuario del sistema operativo
+
+BattlEye sigue una política reducida en cuanto a la recogida de datos que asegura que solo se guardan datos cuando es necesario, por ejemplo, si detecta información que podría indicar el uso de software de cheating. Como resultado, BattlEye en general no almacenará ninguna información de la mayor parte de los usuarios.
+
+BattlEye puede almacenar la información durante la duración completa de sus servicios en el juego.
+
+Puedes contactar con Ubisoft en cualquier momento para ejercitar tus derechos relativos al proceso de datos. Entra en la página de Política de Privacidad de Datos de BattlEye en https://www.battleye.com/privacy-policy/, y Política de Privacidad de Datos de Ubisoft en https://legal.ubi.com/privacypolicy para ver más información.

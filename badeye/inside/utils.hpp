@@ -5,7 +5,6 @@
 #include <string>
 #include "bedaisy.hpp"
 
-char print_buffer[0x1000];
 namespace utils
 {
 	struct nt_peb

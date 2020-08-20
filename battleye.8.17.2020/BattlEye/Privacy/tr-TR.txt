@@ -1,0 +1,15 @@
+Adil bir oyun ortamı sağlayabilmek için hile yazılımının kullanımını önleme ve tespit etme amacıyla BattlEye sizden aldığı aşağıdaki bilgileri işleyebilir:
+
+- IP adresi
+- Oyun tanımlayıcıları (örneğin oyun içi isim, hesap kimliği vs.)
+- Donanım cihazı bilgisi ve tanımlayıcıları (örneğin seri numaralar)
+- Çalışan işletim sistemiyle ilgili bilgiler
+- Oyunla ilgili bilgiler ve işletim sistemiyle alakalı dosyalar ve hafıza
+- Çalışan işlemler, sürücüler ve diğer çalıştırılabilir kodlarla ilgili bilgiler
+- Diğer bilgilere dair dosya adları burada listelenir, bunlar arasında işletim sisteminizin kullanıcı adı da bulunabilir
+
+BattlEye sadece gerekli olduğunda verileri saklamaya yönelik minimize bir ilkeyi takip etmektedir, örneğin BattlEye potansiyel bir hile yazılımının kullanıldığında dair bilgiler bulur. Sonuç olarak BattlEye çoğu kullanıcının bilgilerini saklı tutmaz.
+
+BattlEye, oyun için verilen hizmetlerin verilme süresinin tamamını saklayabilir.
+
+Bu veri işleme ile ilgili haklarınızı kullanmak için Ubisoft ile irtibata geçebilirsiniz. Daha fazla bilgi almak için BattlEye'ın Gizlilik Politikasına https://www.battleye.com/privacy-policy/ adresinden ve Ubisoft'ın Gizlilik Politikasına https://legal.ubi.com/privacypolicy adresinden göz atabilirsiniz.
